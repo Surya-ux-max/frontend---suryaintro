@@ -1,3 +1,96 @@
-h1{
-    color:rgb(14, 4, 4)
+body {
+    font-family: Arial, sans-serif;
+    color: #000;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 20px 0 30px 0;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.main-title {
+    font-size: 2.7em;
+}
+
+.sub-title {
+    font-size: 1.7em;
+}
+
+.dept-title {
+    font-size: 1.3em;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.summary-text {
+    font-size: 1.3em;
+    margin: 20px auto 25px auto;
+    max-width: 900px;
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+.edu-line {
+    font-size: 1.1em;
+    margin: 13px 0;
+    font-weight: bold;
+}
+
+.divider {
+    font-size: 2em;
+    margin: 32px auto 26px auto;
+    color: #222;
+    letter-spacing: 2px;
+}
+
+#skills-sphere-container {
+    width: 320px;
+    height: 320px;
+    margin: 34px auto 38px auto;
+    perspective: 900px;
+    position: relative;
+}
+
+#skills-sphere {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.skill-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 9px 18px;
+    background: #fff;
+    border-radius: 13px;
+    box-shadow: 0 1px 8px rgba(20, 20, 20, 0.15);
+    font-weight: bold;
+    user-select: none;
+    transform-origin: center center;
+    white-space: nowrap;
+    color: #000;
+    transition: background-color 0.2s;
+    text-align: center;
+    font-size: 1.08em;
+}
+
+.skill-item:hover {
+    background-color: #ffe066;
+    cursor: pointer;
 }
