@@ -1,66 +1,96 @@
 body {
     font-family: Arial, sans-serif;
-    color: #000;
-    background: #fff;
+    background: #e8d8b0;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+}
+.pad-bg {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.container {
-    text-align: center;
-    max-width: 1050px;
-    margin: 0 auto;
-    padding: 20px 0 30px 0;
+/* Exam pad frame (simple illusion) */
+.paper {
+    background: #fffdf7;
+    border-radius: 36px 36px 52px 52px;
+    box-shadow:
+        0 6px 40px 10px #b89e5f88,
+        0 1px 0 #d8c392,
+        0 2px 0 #ecd583,
+        0 10px 35px 4px #aa915744;
+    padding: 42px 30px 42px 30px;
+    max-width: 760px;
+    min-width: 360px;
+    width: 94vw;
+    margin: 40px auto;
+    border: 4px solid #c1a25f;
+    position: relative;
+}
+
+.page {
+    display: none;
+}
+.page.active {
+    display: block;
+    animation: fadein 0.65s;
+}
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(30px);}
+  to   { opacity: 1; transform: translateY(0);}
 }
 
 h1, h2, h3 {
     font-weight: bold;
-    margin: 12px 0;
+    margin: 15px 0 15px 0;
 }
 
 .main-title {
-    font-size: 2.7em;
+    font-size: 2.4em;
 }
 
 .sub-title {
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 .dept-title {
-    font-size: 1.3em;
+    font-size: 1.15em;
     margin-bottom: 18px;
 }
 
 .section-title {
     font-size: 2em;
-    margin-top: 20px;
+    margin-top: 17px;
 }
 
 .summary-text {
-    font-size: 1.3em;
-    margin: 20px auto 25px auto;
-    max-width: 900px;
-    line-height: 1.3;
+    font-size: 1.1em;
+    margin: 16px auto 19px auto;
+    max-width: 600px;
+    line-height: 1.35;
     font-weight: bold;
 }
 
 .edu-line {
-    font-size: 1.1em;
-    margin: 13px 0;
+    font-size: 1.09em;
+    margin: 11px 0;
     font-weight: bold;
 }
 
 .divider {
-    font-size: 2em;
-    margin: 32px auto 26px auto;
-    color: #222;
-    letter-spacing: 2px;
+    font-size: 1.6em;
+    margin: 28px auto 18px auto;
+    color: #665c47;
+    letter-spacing: 1px;
 }
 
 #skills-sphere-container {
     width: 320px;
     height: 320px;
-    margin: 34px auto 38px auto;
+    margin: 32px auto 36px auto;
     perspective: 900px;
     position: relative;
 }
@@ -84,13 +114,31 @@ h1, h2, h3 {
     user-select: none;
     transform-origin: center center;
     white-space: nowrap;
-    color: #000;
+    color: #222;
     transition: background-color 0.2s;
     text-align: center;
-    font-size: 1.08em;
+    font-size: 1.1em;
 }
 
 .skill-item:hover {
-    background-color: #ffe066;
+    background-color: #eaffd8;
     cursor: pointer;
+}
+
+.next-btn {
+    margin-top: 20px;
+    background-color: #e0b44c;
+    color: #322200;
+    border: none;
+    border-radius: 17px;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 12px 38px;
+    cursor: pointer;
+    box-shadow: 0 1px 8px #dec9937a;
+    transition: background 0.18s, color 0.18s;
+}
+.next-btn:hover {
+    background: #bba23d;
+    color: #fff;
 }
