@@ -8,8 +8,8 @@
 /* Body - ChatGPT style */
 body {
   font-family: 'Inter', 'Poppins', sans-serif;
-  background-color: #0d0d0d; /* ChatGPT dark background */
-  color: #e0e0e0; /* Light gray text */
+  background-color: #0d0d0d;
+  color: #e0e0e0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -19,14 +19,12 @@ body {
 
 /* Paper Container */
 .paper {
-  background-color: #1a1a1a; /* Slightly lighter dark background */
+  background-color: #1a1a1a;
   border: 1px solid #2a2a2a;
   border-radius: 12px;
   width: 750px;
-  max-width: 95%;
   padding: 50px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-  overflow: hidden; /* ✅ Prevents scrollbars on page switch */
 }
 
 /* Page Visibility */
@@ -35,33 +33,29 @@ body {
 }
 .page.active {
   display: block;
-  animation: fadeIn 0.6s ease;
 }
 
 /* Header Section */
 .main-title {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.5px;
-  text-align: center; /* ✅ Centered for symmetry */
-  margin-bottom: 10px;
+  text-align: left;
 }
 
 .sub-title {
   font-size: 16px;
   font-weight: 500;
   color: #cfcfcf;
-  text-align: center;
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 .dept-title {
   font-size: 14px;
   font-weight: 400;
   color: #b0b0b0;
-  text-align: center;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 /* Divider Line */
@@ -77,9 +71,8 @@ body {
   font-weight: 600;
   margin-bottom: 12px;
   text-transform: uppercase;
-  color: #00a67e; /* ChatGPT green accent */
+  color: #00a67e;
   letter-spacing: 0.5px;
-  text-align: center;
 }
 
 /* Paragraph Text */
@@ -102,7 +95,6 @@ body {
   align-items: center;
   height: 250px;
   position: relative;
-  overflow: hidden;
 }
 
 .skill-item {
@@ -124,11 +116,20 @@ body {
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: 0.3s ease;
 }
 .next-btn:hover {
   background-color: #029f6d;
-  transform: translateY(-2px);
+}
+
+/* Subtle animation for text appearance */
+.page.active {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Lists Styling */
@@ -149,7 +150,7 @@ body {
   margin-bottom: 10px;
   color: #e6e6e6;
   line-height: 1.5;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .project-list li:hover,
@@ -158,40 +159,72 @@ body {
   transform: translateY(-2px);
 }
 
-/* Section Title refinement for Page 2 */
+/* Section Title refinement */
 .page-2 .section-title {
   text-align: left;
   margin-left: 7%;
   color: #00a67e;
 }
 
-/* Subtle animation for page appearance */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+/* 🔥 Hackathon Gallery Section */
+.hackathon-gallery {
+  padding: 30px 20px;
+  text-align: center;
 }
 
-/* ✅ Responsive Tweaks */
-@media (max-width: 600px) {
-  .paper {
-    padding: 25px;
-  }
+.hackathon-gallery h2 {
+  color: #00a67e;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 
-  .main-title {
-    font-size: 22px;
-  }
+.hackathon-gallery p {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
 
-  .section-title {
-    font-size: 16px;
-  }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  width: 90%;
+  margin: 0 auto;
+}
 
-  .summary-text,
-  .edu-line {
-    font-size: 13px;
-  }
+.gallery-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
 
-  .next-btn {
-    font-size: 13px;
-    padding: 8px 20px;
-  }
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,166,126,0.5);
+}
+/* Hackathon Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.gallery img {
+  width: 220px;
+  height: 150px;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 166, 126, 0.5);
 }

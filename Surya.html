@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Surya Intro Page</title>
-    <link rel="stylesheet" href="surya.css">
+  <meta charset="UTF-8">
+  <title>Surya Intro Page</title>
+  <link rel="stylesheet" href="surya.css">
 </head>
 <body>
   <div class="pad-bg">
@@ -15,35 +15,32 @@
         <h2 class="sub-title">Aspiring Frontend Developer</h2>
         <h2 class="sub-title">Welcome to my Intro Page</h2>
         <h2 class="sub-title">Sri Eshwar College of Engineering</h2>
-        <h2 class="dept-title">Department of Computer Science and Engineering</h2>
-
-
-        
+        <h3 class="dept-title">Department of Computer Science and Engineering</h3>
+        <div class="divider">-------------------------------------------------------</div>
         <h1 class="section-title">Summary</h1>
         <h2 class="summary-text">
           I am Suryaprakash, an aspiring Frontend Developer with a passion for creating visually appealing and user-friendly web applications.<br>
           I have a strong foundation in HTML, CSS, and JavaScript, and I am constantly learning new technologies to enhance my skills.<br>
           My goal is to contribute to innovative projects that make a positive impact on users' experiences.
         </h2>
-
-
+        <div class="divider">-------------------------------------------------------</div>
         <h1 class="section-title">Education</h1>
         <h2 class="edu-line">Sri Eshwar College of Engineering - BE - Computer Science and Engineering - 8.0 CGPA</h2>
         <h2 class="edu-line">Srinivasa Vidhyalaya Matric Higher Secondary School - HSC - 84% - 2024 Passed Out</h2>
         <h2 class="edu-line">Srinivasa Vidhyalaya Matric Higher Secondary School - SSLC - 88% - 2022 Passed Out</h2>
-
-
+        <div class="divider">-------------------------------------------------------</div>
         <h1 class="section-title">Skills</h1>
         <div id="skills-sphere-container">
           <div id="skills-sphere"></div>
         </div>
-
+        <div class="divider">-------------------------------------------------------</div>
         <button class="next-btn" onclick="showNextPage()">Next Page</button>
       </div>
 
       <!-- PAGE 2 -->
       <div class="page page-2">
-        <h1 class="section-title" style="margin-top:60px;">AI Engineer & Frontend Developer</h1>
+        <h1 class="section-title">AI Engineer & Frontend Developer</h1>
+        <div class="divider"></div>
 
         <h1 class="section-title">Projects</h1>
         <ul class="project-list">
@@ -52,7 +49,7 @@
           <li><strong>Portfolio Website</strong> – A responsive personal site built with HTML, CSS, and JavaScript showcasing projects and skills.</li>
         </ul>
 
-        
+        <div class="divider"></div>
 
         <h1 class="section-title">Achievements</h1>
         <ul class="achievements-list">
@@ -61,8 +58,51 @@
           <li>ADYA AI Hackathon – <strong>2nd Prize</strong></li>
         </ul>
 
-
+        <div class="divider"></div>
+        <button class="next-btn" onclick="showPage(3)">Next Page</button>
         <button class="next-btn" onclick="showFirstPage()">Go Back</button>
+      </div>
+
+      <!-- PAGE 3 -->
+      <div class="page page-3">
+        <h1 class="section-title">Hackathon Gallery - Page 1</h1>
+        <div class="divider"></div>
+        <div class="gallery">
+          <img src="images/IMG-20251101-WA0002.jpg" alt="Hackathon 1">
+          <img src="images/IMG-20251101-WA0003.jpg" alt="Hackathon 2">
+          <img src="images/IMG-20251101-WA0004.jpg" alt="Hackathon 3">
+        </div>
+        <div class="divider"></div>
+        <button class="next-btn" onclick="showPage(4)">Next Page</button>
+        <button class="next-btn" onclick="showPage(2)">Go Back</button>
+      </div>
+
+      <!-- PAGE 4 -->
+      <div class="page page-4">
+        <h1 class="section-title">Hackathon Gallery - Page 2</h1>
+        <div class="divider"></div>
+        <div class="gallery">
+          <img src="images/IMG-20251101-WA0005.jpg" alt="Hackathon 4">
+          <img src="images/IMG-20251101-WA0006.jpg" alt="Hackathon 5">
+          <img src="images/IMG-20251101-WA0007.jpg" alt="Hackathon 6">
+          <img src="images/IMG-20251101-WA0008.jpg" alt="Hackathon 7">
+        </div>
+        <div class="divider"></div>
+        <button class="next-btn" onclick="showPage(5)">Next Page</button>
+        <button class="next-btn" onclick="showPage(3)">Go Back</button>
+      </div>
+
+      <!-- PAGE 5 -->
+      <div class="page page-5">
+        <h1 class="section-title">Hackathon Gallery - Page 3</h1>
+        <div class="divider"></div>
+        <div class="gallery">
+          <img src="images/IMG-20251101-WA0009.jpg" alt="Hackathon 8">
+          <img src="images/IMG-20251101-WA0010.jpg" alt="Hackathon 9">
+          <img src="images/IMG-20251012-WA0013.jpg" alt="Hackathon 10">
+        </div>
+        <div class="divider"></div>
+        <button class="next-btn" onclick="showPage(4)">Go Back</button>
       </div>
 
     </div>
@@ -73,18 +113,22 @@
       document.querySelector('.page-1').classList.remove('active');
       document.querySelector('.page-2').classList.add('active');
     }
-
     function showFirstPage() {
       document.querySelector('.page-2').classList.remove('active');
       document.querySelector('.page-1').classList.add('active');
     }
+    function showPage(num) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelector('.page-' + num).classList.add('active');
+    }
 
+    // Skills animation remains unchanged
     const skills = ["HTML", "CSS", "JavaScript", "Public Speaking", "Teamwork", "Problem Solving"];
     const sphere = document.getElementById("skills-sphere");
     const radius = 120;
     const items = [];
 
-    skills.forEach(skill => {
+    skills.forEach((skill) => {
       const elem = document.createElement("div");
       elem.textContent = skill;
       elem.className = "skill-item";
@@ -100,30 +144,24 @@
       items.forEach((elem, i) => {
         const phi = Math.acos(-1 + (2 * i) / total);
         const theta = Math.sqrt(total * Math.PI) * phi;
-        const x = radius * Math.cos(theta) * Math.sin(phi);
-        const y = radius * Math.sin(theta) * Math.sin(phi);
-        const z = radius * Math.cos(phi);
-
-        const xRot = x * Math.cos(angleX) - z * Math.sin(angleX);
-        const zRot = z * Math.cos(angleX) + x * Math.sin(angleX);
-        const yRot = y * Math.cos(angleY) - zRot * Math.sin(angleY);
-        const zFinal = zRot * Math.cos(angleY) + y * Math.sin(angleY);
-
+        let x = radius * Math.cos(theta) * Math.sin(phi);
+        let y = radius * Math.sin(theta) * Math.sin(phi);
+        let z = radius * Math.cos(phi);
+        let xRot = x * Math.cos(angleX) - z * Math.sin(angleX);
+        let zRot = z * Math.cos(angleX) + x * Math.sin(angleX);
+        let yRot = y * Math.cos(angleY) - zRot * Math.sin(angleY);
+        let zFinal = zRot * Math.cos(angleY) + y * Math.sin(angleY);
         const scale = (zFinal + radius) / (2 * radius) + 0.5;
-        elem.style.transform = `
-          translateX(${xRot}px)
-          translateY(${yRot}px)
-          scale(${scale.toFixed(2)})
-        `;
+        const translateX = xRot;
+        const translateY = yRot;
+        elem.style.transform = `translateX(${translateX}px) translateY(${translateY}px) scale(${scale.toFixed(2)})`;
         elem.style.zIndex = Math.floor(scale * 100);
         elem.style.opacity = scale;
       });
-
       angleX += 0.01;
       angleY += 0.005;
       requestAnimationFrame(updatePositions);
     }
-
     updatePositions();
   </script>
 </body>
